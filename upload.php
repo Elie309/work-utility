@@ -24,9 +24,16 @@ if (!empty($_FILES['image']['tmp_name'])) {
         case 'image/gif':
             $sourceImage = imagecreatefromgif($_FILES['image']['tmp_name']);
             break;
+        case 'image/webp':
+            $sourceImage = imagecreatefromwebp($_FILES['image']['tmp_name']);
+            break;
+        case 'image/avif':
+            $sourceImage = imagecreatefromavif($_FILES['image']['tmp_name']);
+            break;
         default:
             die("Unsupported image format: $imageType");
     }
+
 
     $sourceWidth = imagesx($sourceImage);
     $sourceHeight = imagesy($sourceImage);
@@ -54,7 +61,7 @@ if (!empty($_FILES['image']['tmp_name'])) {
     ob_end_clean();
 
     // Send the correct headers to force download the PNG image
-    header('Content-Type: image/png');
+    header('Content-Type: image/webp');
     header('Content-Disposition: attachment; filename="resized_image.webp"');
 
     // Output the image
