@@ -16,7 +16,7 @@
         <form action="upload.php" method="POST" id="submit" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="image">Upload Image:</label>
-                <input type="file" name="image" id="image" class="form-control-file">
+                <input type="file" name="image[]" id="image" class="form-control-file" multiple>
             </div>
             <button type="submit" class="btn btn-primary">Upload</button>
         </form>
