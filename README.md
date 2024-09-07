@@ -24,10 +24,14 @@ A collection of simple PHP utilities designed to assist with common tasks:
 
 ## Installation
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/work-utilities.git
-   ```
+```bash
+git clone https://github.com/yourusername/work-utilities.git
+```
 2. Navigate to the project folder:
-  ```bash
-   cd work-utilities
-   ```
+```bash
+cd work-utilities
+```
+3. Install required PHP libraries via Composer:
+```bash
+composer install
+```
