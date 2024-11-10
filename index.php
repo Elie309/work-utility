@@ -12,6 +12,7 @@
         <ul>
             <li><a href="qrcodegen.php">QR Code</a></li>
             <li><a href="imageresizer.php">Image</a></li>
+            <li><a href="products.php">Products</a></li>
         </ul>
     </nav>
 

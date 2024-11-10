@@ -3,8 +3,8 @@
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use QRcode;
 
-require_once 'vendor/autoload.php';
-require_once 'phpqrcode/qrlib.php';
+require_once '../vendor/autoload.php';
+require_once '../phpqrcode/qrlib.php';
 
 $base_link = "https://frontendtesting.gcslb.com";
 
@@ -47,7 +47,7 @@ function renderQRCodeImages($outputPath)
         // Assuming the script is executed in a context where the browser can access the images relative to the script's URL
         $webPath = str_replace($_SERVER['DOCUMENT_ROOT'], '', $file);
         echo "<div class='container'>";
-        echo "<div class='image-container'><img class='logo' src='gcslogo.png' alt='GCS Logo' />";
+        echo "<div class='image-container'><img class='logo' src='../public/gcslogo.png' alt='GCS Logo' />";
         echo "<img class='image' src='{$webPath}' alt='QR Code' /></div>";
         $name = str_replace('-', ' ', basename($file, '.png'));
         echo "<p class='text'>{$name}</p>";

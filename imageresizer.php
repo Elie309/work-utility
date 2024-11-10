@@ -85,7 +85,7 @@
         function uploadFiles(formData) {
             $('#loadingText').show();
             $.ajax({
-                url: 'upload.php',
+                url: 'handlers/upload.php',
                 type: 'POST',
                 data: formData,
                 contentType: false,

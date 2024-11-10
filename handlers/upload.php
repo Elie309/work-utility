@@ -2,7 +2,7 @@
 if (isset($_FILES['image'])) {
     $desiredWidth = 1200;
     $desiredHeight = 1200;
-    $uploadDir = 'uploads/';
+    $uploadDir = '../uploads/';
     $urls = [];
 
     // Ensure the upload directory exists
