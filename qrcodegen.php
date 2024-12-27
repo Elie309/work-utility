@@ -3,8 +3,8 @@
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use QRcode;
 
-require_once '../vendor/autoload.php';
-require_once '../phpqrcode/qrlib.php';
+require_once './vendor/autoload.php';
+require_once './phpqrcode/qrlib.php';
 
 $base_link = "https://frontendtesting.gcslb.com";
 
