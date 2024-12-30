@@ -1,0 +1,16 @@
+{
+  "name": "work-utility",
+  "version": "1.0.0",
+  "description": "A collection of simple PHP utilities designed to assist with common tasks:",
+  "main": "index.js",
+  "scripts": {
+    "watch": "npx tailwindcss -i ./input.css -o ./output.css --watch",
+    "build": "npx tailwindcss -i ./input.css -o ./output.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

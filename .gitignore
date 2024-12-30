@@ -1,3 +1,5 @@
 outputs
 vendor
 uploads
+node_modules
+.vscode
