@@ -1,7 +1,7 @@
 <?php
 if (isset($_FILES['image'])) {
-    $desiredWidth = 1200;
-    $desiredHeight = 1200;
+    $desiredWidth = isset($_POST['width']) ? (int)$_POST['width'] : 1200;
+    $desiredHeight = isset($_POST['height']) ? (int)$_POST['height'] : 1200;
     $uploadDir = '../uploads/';
     $urls = [];
 

@@ -6,68 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Item Description Generator</title>
     <link rel="stylesheet" href="output.css">
-    <script src="https://unpkg.com/@grammarly/textarea@latest"></script>
-    <style>
-        #formLayout input,
-        textarea {
-
-            outline: none;
-            border: 1px solid #d1d1d1;
-            padding: 10px;
-        }
-    </style>
     <script defer>
         document.addEventListener('DOMContentLoaded', (event) => {
             const templateSelect = document.getElementById('templateSelect');
             templateSelect.addEventListener('change', loadTemplate);
-
-            function handleSelectTemplate() {
-                fetch('handlers/getTemplates.php')
-                    .then(response => response.json())
-                    .then(data => {
-                        const templateSelect = document.getElementById('templateSelect');
-                        templateSelect.innerHTML = '';
-                        for (const key in data) {
-                            const option = document.createElement('option');
-                            option.value = data[key];
-                            option.textContent = data[key].charAt(0).toUpperCase() + data[key].slice(1);
-                            templateSelect.appendChild(option);
-                        }
-
-                        templateSelect.dispatchEvent(new Event('change'));
-
-                    });
-            }
-
-            function loadTemplate() {
-                const template = templateSelect.value;
-                fetch(`templates/${template}.json`)
-                    .then(response => response.json())
-                    .then(data => {
-                        const formContainer = document.getElementById('formContainer');
-                        formContainer.innerHTML = ''; // Clear existing form fields
-                        for (const key in data) {
-                            const label = document.createElement('label');
-                            label.setAttribute('for', key);
-                            label.classList.add('col-span-2');
-                            label.textContent = `${key.charAt(0).toUpperCase() + key.slice(1)}:`;
-                            const input = document.createElement('input');
-                            input.classList.add('col-span-7');
-                            input.setAttribute('type', 'text');
-                            input.setAttribute('id', key);
-                            input.setAttribute('name', key);
-                            input.setAttribute('placeholder', data[key]);
-                            input.required = true;
-                            formContainer.appendChild(label);
-                            formContainer.appendChild(input);
-                        }
-                    });
-            }
-
-            // Load the default template
             handleSelectTemplate();
-            loadTemplate();
         });
+
+        function handleSelectTemplate() {
+            fetch('handlers/getTemplates.php')
+                .then(response => response.json())
+                .then(data => {
+                    const templateSelect = document.getElementById('templateSelect');
+                    templateSelect.innerHTML = '';
+                    for (const key in data) {
+                        const option = document.createElement('option');
+                        option.value = data[key];
+                        option.textContent = data[key].charAt(0).toUpperCase() + data[key].slice(1);
+                        templateSelect.appendChild(option);
+                    }
+
+                    templateSelect.dispatchEvent(new Event('change'));
+
+                });
+        }
+
+        function loadTemplate() {
+            const template = templateSelect.value;
+            fetch(`templates/${template}.json`)
+                .then(response => response.json())
+                .then(data => {
+                    const formContainer = document.getElementById('formContainer');
+                    formContainer.innerHTML = ''; // Clear existing form fields
+                    for (const key in data) {
+                        const label = document.createElement('label');
+                        label.setAttribute('for', key);
+                        label.classList.add('col-span-2');
+                        label.textContent = `${key.charAt(0).toUpperCase() + key.slice(1)}:`;
+                        const input = document.createElement('input');
+                        input.classList.add('col-span-7');
+                        input.setAttribute('type', 'text');
+                        input.setAttribute('id', key);
+                        input.setAttribute('name', key);
+                        input.setAttribute('placeholder', data[key]);
+                        input.required = true;
+                        formContainer.appendChild(label);
+                        formContainer.appendChild(input);
+                    }
+                });
+        }
 
 
 
@@ -120,7 +107,7 @@
             </div>
         </form>
 
-        <textarea id="description"  class="w-full min-h-64 mt-4 border rounded"></textarea>
+        <textarea id="description" class="w-full min-h-64 mt-4 border rounded"></textarea>
 
         <div class="flex justify-end">
             <button onclick="copyToClipboard()" id="copyButton" class="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Copy to Clipboard</button>

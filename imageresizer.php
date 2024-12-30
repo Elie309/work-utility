@@ -45,7 +45,6 @@
             transform: translateY(-50%);
             color: #aaa;
         }
-      
     </style>
 </head>
 
@@ -58,9 +57,21 @@
         <p class="mt-4 text-center text-green-600">Upload or paste images to resize them.</p>
 
         <form id="uploadForm" enctype="multipart/form-data" class="mt-4">
+
+            <div class="flex flex-row justify-between">
+                <div class="my-2 flex flex-col">
+                    <label for="width" class="block text-green-600">Image Width (px):</label>
+                    <input type="number" name="width" id="width" class="form-control" value="1200">
+                </div>
+                <div class="my-2 flex flex-col">
+                    <label for="height" class="block text-green-600">Image Height (px):</label>
+                    <input type="number" name="height" id="height" class="form-control" value="1200">
+                </div>
+            </div>
             <div id="uploadArea" class="border rounded">
                 <input type="file" name="image[]" id="image" class="form-control-file" multiple>
             </div>
+
         </form>
         <div id="loadingText" class="text-green-600 hidden bold">Uploading...</div>
         <div id="downloadLinks" class="mt-3"></div>
@@ -103,6 +114,8 @@
 
             $('#image').change(function() {
                 var formData = new FormData($('#uploadForm')[0]);
+                formData.append('width', $('#width').val());
+                formData.append('height', $('#height').val());
                 uploadFiles(formData);
             });
 
@@ -113,6 +126,9 @@
                         var blob = items[i].getAsFile();
                         var formData = new FormData();
                         formData.append('image[]', blob);
+                        formData.append('size', $('#size').val());
+                        formData.append('width', $('#width').val());
+                        formData.append('height', $('#height').val());
                         uploadFiles(formData);
                     }
                 }
@@ -141,6 +157,9 @@
                 for (var i = 0; i < files.length; i++) {
                     formData.append('image[]', files[i]);
                 }
+                formData.append('size', $('#size').val());
+                formData.append('width', $('#width').val());
+                formData.append('height', $('#height').val());
                 uploadFiles(formData);
             });
         });

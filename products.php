@@ -20,18 +20,28 @@
                 <label for="newProducts" class="text-gray-500 mt-2 select-none">Upload New Products</label>
                 <input type="file" name="newProducts" id="newProducts" accept=".xlsx, .xls" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
                 <p class="text-gray-500 mt-2">Drag and drop files here or click to upload</p>
+                <p class="text-gray-500 mt-2 select-none">File name: <span id="file_name_new_products" class="font-bold"></span></p>
             </div>
             <div class="border-2 border-dashed border-gray-300 p-5 rounded-lg text-center cursor-pointer relative">
                 <label for="currentProducts" class="text-gray-500 mt-2 select-none">Current List of Products</label>
                 <input type="file" name="currentProducts" id="currentProducts" accept=".xlsx, .xls" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
                 <p class="text-gray-500 mt-2 select-none">Drag and drop files here or click to upload</p>
+                <p class="text-gray-500 mt-2 select-none">File name: <span id="file_name_current_products" class="font-bold"></span></p>
             </div>
             <div class="text-end">
                 <button type="submit" class="w-40 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Upload</button>
-                
             </div>
-    </form>
+        </form>
     </div>
+    <script>
+        document.getElementById('newProducts').addEventListener('change', function() {
+            document.getElementById('file_name_new_products').textContent = this.files[0].name;
+        });
+
+        document.getElementById('currentProducts').addEventListener('change', function() {
+            document.getElementById('file_name_current_products').textContent = this.files[0].name;
+        });
+    </script>
 </body>
 
 </html>

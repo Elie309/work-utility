@@ -608,10 +608,6 @@ video {
   grid-column: span 7 / span 7;
 }
 
-.m-5 {
-  margin: 1.25rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -707,6 +703,10 @@ video {
 
 .grid-cols-9 {
   grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
@@ -865,6 +865,13 @@ html, body {
   .no-print {
     display: none;
   }
+}
+
+input,
+textarea {
+  outline: none;
+  border: 1px solid #d1d1d1;
+  padding: 10px;
 }
 
 .hover\:bg-green-700:hover {
