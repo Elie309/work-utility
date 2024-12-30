@@ -1,37 +1,95 @@
-# Work Utilities
+# GCS Work Utilities
 
-A collection of simple PHP utilities designed to assist with common tasks:
+## Overview
 
-1. **Bulk Image Resizing and Conversion**: Resize and convert images in bulk, ideal for preparing design content.
-2. **QR Code Generation**: Generate QR codes from an Excel file containing links.
+GCS Work Utilities is a collection of tools designed to assist with various tasks such as generating QR codes, resizing images, managing product lists, and editing product descriptions. This project is built using PHP and integrates with libraries like PhpSpreadsheet and phpqrcode.
 
 ## Features
-- **Image Resizing and Conversion**:
-  - Resize images to specified dimensions.
-  - Convert images to different formats.
-  - Process multiple images at once.
-  
-- **QR Code Generator**:
-  - Automatically generate QR codes for URLs stored in an Excel file.
-  - QR codes are generated and saved as image files.
 
-## Requirements
-- PHP 7.0+ 
-- Required PHP extensions: 
-  - `php-gd` for image processing.
-  - `phpqrcode` for generating QR codes.
-  - `php-spreadsheet` for Excel file reading.
+- **QR Code Generator**: Upload an Excel file to generate QR codes for each entry.
+- **Image Resizer**: Upload or paste images to resize and optimize them for web use.
+- **Product List Manager**: Upload and compare product lists based on SKU.
+- **Description Editor**: Manage and edit product descriptions.
 
-## Installation
+## Setup
+
+### Prerequisites
+
+- PHP 7.4 or higher
+- Composer
+- Web server (e.g., Apache, Nginx)
+
+### Installation
+
 1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/work-utilities.git
-```
-2. Navigate to the project folder:
-```bash
-cd work-utilities
-```
-3. Install required PHP libraries via Composer:
-```bash
-composer install
-```
+    ```sh
+    git clone https://github.com/Elie309/workutility.git
+    cd workutility
+    ```
+
+2. Install dependencies using Composer:
+    ```sh
+    composer install
+    ```
+
+3. Ensure the `uploads` and `outputs` directories are writable by the web server:
+    ```sh
+    chmod -R 775 uploads outputs
+    ```
+
+4. Configure your web server to serve the project directory.
+
+## Usage
+
+### QR Code Generator
+
+1. Navigate to the QR Code Generator page:
+    ```
+    http://yourserver/qrcodegen.php
+    ```
+
+2. Upload an Excel file containing the data for QR code generation.
+
+3. The generated QR codes will be displayed on the page.
+
+### Image Resizer
+
+1. Navigate to the Image Resizer page:
+    ```
+    http://yourserver/imageresizer.php
+    ```
+
+2. Upload images to resize them.
+
+3. Download the resized images from the provided links.
+
+### Product List Manager
+
+1. Navigate to the Product List Manager page:
+    ```
+    http://yourserver/products.php
+    ```
+
+2. Upload product lists to compare them based on SKU.
+
+### Description Editor
+
+1. Navigate to the Description Editor page:
+    ```
+    http://yourserver/descriptions.php
+    ```
+
+2. Manage and edit product descriptions.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- [PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet)
+- [phpqrcode](https://sourceforge.net/projects/phpqrcode/)
