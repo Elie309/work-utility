@@ -10,10 +10,12 @@
 
 </head>
 
-<body class="font-sans m-5">
+<body class="font-sans">
     <div class="container mx-auto max-w-2xl">
-        <a href="descriptions.php" class="font-bold text-green-600 underline">Back</a>
-        <h1 class="text-2xl font-bold text-green-600">Edit Description Template</h1>
+        <header class="p-5 bg-green-600 text-white">
+            <a href="descriptions.php" class="font-bold text-white underline">Back</a>
+            <h1 class="text-2xl font-bold">Edit Description Template</h1>
+        </header>
         <label for="templateSelect" class="block mt-4">Select Template:</label>
         <select id="templateSelect" class="block w-full mt-2 p-2 border rounded" onchange="loadTemplate()"></select>
         <form onsubmit="event.preventDefault(); saveTemplate();" class="mt-4">
@@ -25,8 +27,10 @@
                 title: Enter the title
             </textarea>
 
-            <button type="button" onclick="deleteTemplate()" class="mt-4 bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700">Delete Template</button>
-            <button type="submit" class="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Save Template</button>
+            <div class="flex justify-around">
+                <button type="button" onclick="deleteTemplate()" class="mt-4 bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700">Delete Template</button>
+                <button type="submit" class="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Save Template</button>
+            </div>
         </form>
     </div>
 

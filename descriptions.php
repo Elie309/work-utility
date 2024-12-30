@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Item Description Generator</title>
     <link rel="stylesheet" href="output.css">
-
+    <script src="https://unpkg.com/@grammarly/textarea@latest"></script>
     <style>
         #formLayout input,
         textarea {
@@ -74,7 +74,7 @@
 
         function generateDescription() {
             const form = document.forms['itemForm'];
-            let description = `${form['name'].value}\n`;
+            let description = `${form['title'].value}\n`;
             for (const element of form.elements) {
                 if (element.name && element.name !== 'name') {
                     description += `- ${element.name.charAt(0).toUpperCase() + element.name.slice(1)}: ${element.value}\n`;
@@ -120,11 +120,10 @@
             </div>
         </form>
 
-        <textarea id="description" readonly class="w-full min-h-64 mt-4 border rounded"></textarea>
+        <textarea id="description"  class="w-full min-h-64 mt-4 border rounded"></textarea>
 
         <div class="flex justify-end">
             <button onclick="copyToClipboard()" id="copyButton" class="mt-4 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Copy to Clipboard</button>
-
         </div>
     </div>
 </body>
