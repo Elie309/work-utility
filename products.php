@@ -1,58 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Products</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            font-size: x-large;
-        }
-        .upload-form {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .upload-form h2 {
-            margin-bottom: 20px;
-        }
-        .upload-form input[type="file"] {
-            margin-bottom: 10px;
-        }
-        .upload-form button {
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .upload-form button:hover {
-            background-color: #218838;
-        }
-    </style>
+    <link rel="stylesheet" href="output.css">
 </head>
-<body>
-    <div class="upload-form">
-        <h2>Upload Excel Sheets</h2>
-        <form action="handlers/dataHandler.php" method="post" enctype="multipart/form-data">
-            <label for="newProducts">New Products:</label>
-            <input type="file" name="newProducts" id="newProducts" accept=".xlsx, .xls">
-            <br>
-            <label for="currentProducts">Current Products:</label>
-            <input type="file" name="currentProducts" id="currentProducts" accept=".xlsx, .xls">
-            <br>
-            <button type="submit">Upload</button>
-        </form>
+
+<body class="font-sans">
+    <div class="container mx-auto max-w-2xl">
+        <header class="p-5 bg-green-600 text-white">
+            <a href="index.php" class="font-bold text-white underline">Back</a>
+            <h1 class="text-2xl font-bold">Products Comparison</h1>
+        </header>
+        <p class="text-green-600 text-center my-2">Products comparison based on their SKU</p>
+        <form action="handlers/dataHandler.php" method="post" enctype="multipart/form-data" class="space-y-4">
+            <div class="border-2 border-dashed border-gray-300 p-5 rounded-lg text-center relative">
+                <label for="newProducts" class="text-gray-500 mt-2 select-none">Upload New Products</label>
+                <input type="file" name="newProducts" id="newProducts" accept=".xlsx, .xls" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                <p class="text-gray-500 mt-2">Drag and drop files here or click to upload</p>
+            </div>
+            <div class="border-2 border-dashed border-gray-300 p-5 rounded-lg text-center cursor-pointer relative">
+                <label for="currentProducts" class="text-gray-500 mt-2 select-none">Current List of Products</label>
+                <input type="file" name="currentProducts" id="currentProducts" accept=".xlsx, .xls" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                <p class="text-gray-500 mt-2 select-none">Drag and drop files here or click to upload</p>
+            </div>
+            <div class="text-end">
+                <button type="submit" class="w-40 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Upload</button>
+                
+            </div>
+    </form>
     </div>
 </body>
+
 </html>
