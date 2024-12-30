@@ -1,9 +1,11 @@
 {
     "cSpell.words": [
         "gcslogo",
+        "imageresizer",
         "phpoffice",
         "phpqrcode",
         "phpspreadsheet",
+        "qrcodegen",
         "qrlib"
     ]
 }

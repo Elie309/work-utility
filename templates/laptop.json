@@ -1,0 +1,19 @@
+{
+    "title": "Item Name",
+    "chipset": "Chipset",
+    "processor": "Processor",
+    "memory": "Memory",
+    "storage": "Storage",
+    "graphics": "Graphics",
+    "display": "Display",
+    "wlan": "WLan+Bluetooth",
+    "camera": "Camera",
+    "ports": "Ports",
+    "multimedia": "Multimedia",
+    "keyboard": "Keyboard",
+    "battery": "Battery",
+    "os": "OS",
+    "warranty": "Warranty",
+    "color": "Color",
+    "weight": "Weight"
+}

@@ -1,0 +1,12 @@
+{
+    "title": "Printer Name",
+    "type": "Type",
+    "technology": "Technology",
+    "resolution": "Resolution",
+    "speed": "Speed",
+    "connectivity": "Connectivity",
+    "paper_size": "Paper Size",
+    "features": "Features",
+    "color": "Color",
+    "weight": "Weight"
+}
